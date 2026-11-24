@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacybeleid — TMS Tweaks</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 46rem; margin: 3rem auto; padding: 0 1.25rem;
+         font: 16px/1.65 -apple-system, "Segoe UI", system-ui, sans-serif; }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  .sub { color: #666; margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid #ddd; vertical-align: top; }
+  th { font-weight: 600; }
+  code { font-family: ui-monospace, Consolas, monospace; font-size: .92em; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; color: #666; font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<h1>Privacybeleid — TMS Tweaks</h1>
+<p class="sub">Chrome-extensie · versie 2.15.0 · laatst bijgewerkt 27 augustus 2026</p>
+
+<p>TMS Tweaks is een intern hulpmiddel van SafetyPro Trainingen dat kleine, optionele
+verbeteringen toevoegt aan de gebruikersinterface van de trainingsplanning-webapplicatie
+(Inventar TMS). De extensie is uitsluitend actief op
+<code>https://tms.safetyprotrainingen.nl</code> en doet niets op andere websites.</p>
+
+<p>Dit beleid beschrijft precies welke gegevens de extensie opslaat en welke gegevens de
+extensie verstuurt.</p>
+
+<h2>Wat wordt níet verzameld</h2>
+
+<p>De extensie verzamelt, bewaart of verstuurt <strong>geen</strong>:</p>
+<ul>
+  <li>persoonsgegevens, namen, e-mailadressen of inloggegevens;</li>
+  <li>cursus-, deelnemer- of klantgegevens uit TMS;</li>
+  <li>pagina-inhoud, schermafbeeldingen of ingevulde formuliervelden;</li>
+  <li>browsegeschiedenis of bezochte pagina's;</li>
+  <li>gebruiksstatistieken, klikgedrag of andere analytics.</li>
+</ul>
+
+<p>Er worden geen gegevens verkocht of gedeeld voor advertenties, profilering of enig ander
+commercieel doel.</p>
+
+<h2>Wat lokaal wordt opgeslagen</h2>
+
+<p>Deze gegevens blijven in de browser en worden niet naar ons verstuurd.</p>
+
+<table>
+  <tr><th>Opslag</th><th>Inhoud</th><th>Waarom</th></tr>
+  <tr>
+    <td><code>chrome.storage.sync</code></td>
+    <td>De aan/uit-keuzes voor de optionele aanpassingen (een klein aantal ja/nee-instellingen).</td>
+    <td>Zodat je keuzes behouden blijven. Chrome synchroniseert deze via je eigen Google-account
+        naar je andere apparaten; wij hebben er geen toegang toe.</td>
+  </tr>
+  <tr>
+    <td><code>chrome.storage.sync</code></td>
+    <td>Enkele technische waarden voor de storingsmelding hieronder: een willekeurig getal, een
+        teller, een datum en een korte controlewaarde.</td>
+    <td>Om te voorkomen dat dezelfde melding vaker wordt verstuurd dan nodig.</td>
+  </tr>
+  <tr>
+    <td><code>chrome.storage.local</code></td>
+    <td>Tijdelijke kopieën van antwoorden van de TMS-API zelf: zaalnamen met bijbehorende
+        locatie, cursustypen, en — alleen in de terugvalmodus — een koppeling van cursusnummer
+        naar zaal.</td>
+    <td>Zodat dezelfde gegevens niet steeds opnieuw bij TMS worden opgevraagd. Deze kopieën
+        verlopen automatisch en blijven op het apparaat.</td>
+  </tr>
+</table>
+
+<h2>Wat wél wordt verstuurd: de storingsmelding</h2>
+
+<p>Eén onderdeel van de extensie leest de locatiegegevens van een training uit de pagina zelf,
+in plaats van ze bij de TMS-API op te vragen. Dat scheelt veel netwerkverkeer. Wijzigt een
+update van TMS die interne structuur, dan schakelt de extensie automatisch over op een
+API-variant en verstuurt zij <strong>eenmalig een technische melding</strong> aan de beheerder,
+zodat de extensie kan worden bijgewerkt.</p>
+
+<p>Die melding bevat uitsluitend:</p>
+<ul>
+  <li>het versienummer van de extensie;</li>
+  <li>de datum;</li>
+  <li>een korte technische omschrijving van wat niet meer werkt (bijvoorbeeld: de verwachte
+      gegevens ontbraken op een aantal kaarten);</li>
+  <li>of het hulpbestand van de extensie geladen was.</li>
+</ul>
+
+<p>De melding bevat <strong>geen</strong> cursus-, klant- of persoonsgegevens en is niet
+herleidbaar tot een individuele gebruiker. Zij wordt streng begrensd: alleen na herhaalde
+bevestiging van de storing, hoogstens driemaal per versie per installatie, en met een tussenpoos
+van minimaal zeven dagen. In de praktijk komt dit hooguit enkele keren per jaar voor.</p>
+
+<h3>Waar de melding naartoe gaat</h3>
+
+<table>
+  <tr><th>Dienst</th><th>Rol</th></tr>
+  <tr>
+    <td><code>ntfy.sh</code></td>
+    <td>Bezorgt de melding als pushbericht op het toestel van de beheerder.
+        <a href="https://ntfy.sh/privacy">Privacybeleid van ntfy.sh</a>.</td>
+  </tr>
+  <tr>
+    <td><code>script.google.com</code></td>
+    <td>Een Google Apps Script binnen ons eigen Google-account, dat dezelfde melding als e-mail
+        aan de beheerder doorstuurt. De inhoud blijft binnen SafetyPro Trainingen.</td>
+  </tr>
+</table>
+
+<p>Zoals bij elk internetverzoek zien deze diensten het IP-adres van waaruit het verzoek wordt
+gedaan. Wij verzamelen of bewaren dat IP-adres niet en gebruiken het nergens voor.</p>
+
+<h2>Bewaartermijn</h2>
+
+<p>Meldingen die per e-mail binnenkomen worden bewaard in de mailbox van de beheerder zolang zij
+nuttig zijn voor het onderhoud van de extensie, en daarna verwijderd. Pushberichten worden door
+ntfy.sh slechts korte tijd bewaard. Lokale kopieën in de browser verlopen automatisch en worden
+verwijderd wanneer de extensie wordt verwijderd.</p>
+
+<h2>Toestemming en rechten</h2>
+
+<p>De extensie is een intern hulpmiddel en wordt niet openbaar aangeboden. Wil je geen enkele
+melding laten versturen, dan kan de extensie worden verwijderd via
+<code>chrome://extensions</code>; daarmee verdwijnen ook alle lokaal opgeslagen gegevens.</p>
+
+<h2>Wijzigingen</h2>
+
+<p>Wijzigt de werking van de extensie op een manier die dit beleid raakt, dan wordt dit document
+bijgewerkt en de datum bovenaan aangepast.</p>
+
+<h2>Contact</h2>
+
+<p>Vragen over dit beleid of over de gegevens die de extensie verwerkt:
+<a href="mailto:robert+hlc@misterpeters.nl">robert+hlc@misterpeters.nl</a>.</p>
+
+<footer>
+TMS Tweaks is een interne extensie van SafetyPro Trainingen en staat niet in verbinding met
+Inventar of Google.
+</footer>
+
+</body>
+</html>
